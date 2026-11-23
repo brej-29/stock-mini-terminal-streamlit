@@ -1,4 +1,8 @@
 <div align="center">
+
+[Launch Stock Mini Terminal](https://stock-mini-terminal.streamlit.app/) · [Company research snapshots](https://brej-29.github.io/finai-realtime-market-analytics/#research)
+
+Choose Apple, Microsoft or NVIDIA under **Company research** to read the business profile, investor update and recent coverage. The app displays the retrieval date and links to the publications. These public snapshots are prepared locally using Tavily through OmniRoute.
   <h1>📈 Stock Finder & Mini Terminal</h1>
   <p><i>Search tickers by name, view price performance, fundamentals, and recent news — built with Streamlit</i></p>
 </div>

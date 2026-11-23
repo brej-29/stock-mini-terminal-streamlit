@@ -18,6 +18,7 @@ from app.services import (
 )
 
 from app.ui import price_chart, kpi_row
+from app.company_research import show_research
 from app.utils import get_logger, get_secrets
 
 logger = get_logger()
@@ -138,6 +139,8 @@ with col_right:
         st.write("(empty)")
 
 # --------------- Main Tabs ---------------
+show_research(symbol)
+
 if symbol:
     tabs = st.tabs(["Overview", "Fundamentals", "News"])
 
