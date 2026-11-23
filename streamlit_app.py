@@ -1,6 +1,5 @@
 import datetime as dt
 import os
-import toml
 import streamlit as st
 
 from app.services import (

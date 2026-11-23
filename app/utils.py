@@ -34,12 +34,15 @@ def get_logger() -> logging.Logger:
 
 @lru_cache(maxsize=1)
 def get_secrets() -> Dict[str, Any]:
-# Streamlit exposes secrets via st.secrets
+    try:
+        configured = dict(st.secrets)
+    except FileNotFoundError:
+        configured = {}
     return {
-        "ALPHA_VANTAGE_KEY": st.secrets.get("ALPHA_VANTAGE_KEY", ""),
-        "FINNHUB_KEY": st.secrets.get("FINNHUB_KEY", ""),
-        "FMP_KEY": st.secrets.get("FMP_KEY", ""),
-        "OFFLINE_MODE": str(st.secrets.get("OFFLINE_MODE", "false")).lower() == "true",
+        "ALPHA_VANTAGE_KEY": configured.get("ALPHA_VANTAGE_KEY", ""),
+        "FINNHUB_KEY": configured.get("FINNHUB_KEY", ""),
+        "FMP_KEY": configured.get("FMP_KEY", ""),
+        "OFFLINE_MODE": str(configured.get("OFFLINE_MODE", "false")).lower() == "true",
     }
 
 
